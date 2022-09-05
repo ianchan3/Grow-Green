@@ -1,4 +1,4 @@
-input, button {
+#DonationPage > input, #DonationPage > button {
   border-color: red;
   border-width: medium;
 }
