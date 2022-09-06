@@ -1,5 +1,15 @@
 body {
-  background-image: url('https://8billiontrees.com/wp-content/uploads/2021/07/graphic-people-working-tree-planting-organizations.png');
-  background-size: cover;
+  /* background-color: rgb(249, 249, 139); */
+  background-color: rgb(190, 233, 248);
+  background-image: url('https://teamtrees.org/img/big-header.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
+/* body {
+  background-image: url('https://8billiontrees.com/wp-content/uploads/2021/07/graphic-people-working-tree-planting-organizations.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
