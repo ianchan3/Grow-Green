@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import * as userService from '../../utilities/users-service';
+import './NavBar.css';
 
 export default function NavBar({ user, setUser }) {
 
@@ -11,8 +12,9 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <main>
-      <Link to='/'><Logo /></Link>
+      
       <nav>
+        <Link to='/'><Logo /></Link>
         <Link to='/donations'>Donation History</Link>
         &nbsp; | &nbsp;
         <Link to='/donations/new'>New Donation</Link>
