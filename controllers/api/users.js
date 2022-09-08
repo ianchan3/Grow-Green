@@ -7,18 +7,6 @@ module.exports = {
   login,
 };
 
-async function login(req, res) {
-  try {
-    const user = await User.findOne({email: req.body.email});
-    if (!user) throw new Error('Invalid Credentials');
-    const match = await bcrypt.compare(req.body.password, user.password);
-    if (!match) throw new Error('Invalid Credentials');
-    const token = createJWT(user);
-    res.json(token);
-  } catch (e) {
-    res.status(400).json(e);
-  }
-}
 
 async function create(req, res) {
   try {
@@ -30,6 +18,18 @@ async function create(req, res) {
   }
 }
 
+async function login(req, res) {
+  try {
+    const user = await User.findOne({email: req.body.email});
+    if (!user) throw new Error('Invalid Credentials');
+    const match = await bcrypt.compare(req.body.password, user.password);
+    if (!match) throw new Error('Invalid Credentials');
+    const token = createJWT(user);
+    res.json( createJWT(user) );
+  } catch {
+    res.status(400).json('Bad Credentials');
+  }
+}
 
 function createJWT(user) {
   return jwt.sign(

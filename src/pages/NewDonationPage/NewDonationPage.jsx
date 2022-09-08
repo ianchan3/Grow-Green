@@ -33,7 +33,7 @@ export default function NewDonationPage({ user, setUser }) {
 
   /*--- Event Handlers ---*/
 
-  async function handleAddToDonation(itemId) {
+  async function handleAddToOrder(itemId) {
     const updatedCart = await donationsAPI.addItemToCart(itemId);
     setCart(updatedCart);
   }
@@ -61,7 +61,7 @@ export default function NewDonationPage({ user, setUser }) {
       </aside>
       <MenuList
         menuItems={menuItems.filter(item => item.category.name === activeCat)}
-        handleAddToDonation={handleAddToDonation}
+        handleAddToOrder={handleAddToOrder}
       />
       <DonationDetail
         donation={cart}

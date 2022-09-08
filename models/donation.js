@@ -17,9 +17,11 @@ lineItemSchema.virtual('extPrice').get(function() {
 
 const donationSchema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: 'User' },
+  lineItems: [lineItemSchema],
   isPaid: {type: Boolean, default: false }
 }, {
   timestamps: true,
+  toJSON: { virtuals: true }
 });
 
 donationSchema.virtual('donationTotal').get(function() {

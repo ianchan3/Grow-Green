@@ -23,13 +23,11 @@ export default function DonationHistoryPage({ user, setUser }) {
       <aside>
         <UserLogOut user={user} setUser={setUser} />
       </aside>
-      {/* Render an OrderList component (needs to be coded) */}
       <DonationList
         donations={donations}
         selectedDonation={selectedDonation}
         setSelectedDonation={setSelectedDonation}
       />
-      {/* Render the existing OrderDetail component */}
       <DonationDetail donation={selectedDonation} />
     </main>
   );
