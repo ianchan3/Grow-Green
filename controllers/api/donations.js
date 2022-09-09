@@ -7,8 +7,13 @@ module.exports = {
   addToCart,
   setItemQtyInCart,
   checkout,
-  forUser
+  forUser,
+  deleteDonation,
 };
+
+async function deleteDonation(req, res) {
+  await Donation.findByIdAndDelete(req.params.id)
+}
 
 async function forUser(req, res) {
   const donations = await Donation.find({user: req.user._id, isPaid: true}).sort('-updatedAt');
