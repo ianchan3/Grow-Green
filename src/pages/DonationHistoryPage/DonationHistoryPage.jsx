@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './DonationHistoryPage.css';
 import * as donationsAPI from '../../utilities/donations-api';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
@@ -21,6 +22,7 @@ export default function DonationHistoryPage({ user, setUser }) {
   return (
     <main className="DonationHistoryPage">
       <aside>
+      <Link to="/donations/new" className="button btn-sm">NEW DONATION</Link>
         <UserLogOut user={user} setUser={setUser} />
       </aside>
       <DonationList

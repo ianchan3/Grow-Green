@@ -43,7 +43,7 @@ export default function DonationDetail({ donation, handleChangeQty, handleChecko
             </section>
           </>
           :
-          <div className="hungry">Hungry?</div>
+          <div className="hungry">Donate?</div>
         }
       </div>
     </div>
