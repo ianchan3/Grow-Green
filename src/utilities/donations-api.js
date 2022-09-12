@@ -6,6 +6,10 @@ export function deleteDonation(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
 
+export function updateDonation(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'PUT');
+}
+
 export function getCart() {
   return sendRequest(`${BASE_URL}/cart`);
 }

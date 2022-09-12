@@ -6,8 +6,7 @@ import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import DonationDetail from '../../components/DonationDetail/DonationDetail';
 import DonationList from '../../components/DonationList/DonationList';
 
-export default function DonationHistoryPage({ user, setUser }) {
-  const [donations, setDonations] = useState([]);
+export default function DonationHistoryPage({ user, setUser, donations, setDonations }) {
   const [selectedDonation, setSelectedDonation] = useState(null);
 
   useEffect(function() {

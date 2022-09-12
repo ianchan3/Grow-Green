@@ -9,10 +9,17 @@ module.exports = {
   checkout,
   forUser,
   deleteDonation,
+  updateDonation
 };
 
 async function deleteDonation(req, res) {
-  await Donation.findByIdAndDelete(req.params.id)
+  await Donation.findByIdAndDelete(req.params.id);
+  // const donations = await Donation.find({}).sort('-createdAt').exec();
+  // res.json(donations);
+}
+
+async function updateDonation(req, res) {
+  await Donation.findByIdAndUpdate(req.params.id);
 }
 
 async function forUser(req, res) {

@@ -13,5 +13,6 @@ router.post('/cart/checkout', donationsCtrl.checkout);
 // POST /api/donations/cart/qty
 router.put('/cart/qty', donationsCtrl.setItemQtyInCart);
 router.delete('/:id', donationsCtrl.deleteDonation);
+router.put('/edit/:id', donationsCtrl.updateDonation);
 
 module.exports = router;

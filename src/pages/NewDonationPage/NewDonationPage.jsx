@@ -5,31 +5,12 @@ import * as donationsAPI from '../../utilities/donations-api';
 import './NewDonationPage.css';
 import DonationDetail from '../../components/DonationDetail/DonationDetail';
 import MenuList from '../../components/MenuList/MenuList';
-// import CategoryList from '../../components/CategoryList/CategoryList';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 
-export default function NewDonationPage({ user, setUser }) {
-  const [menuItems, setMenuItems] = useState([]);
-  // const [activeCat, setActiveCat] = useState('');
-  const [cart, setCart] = useState(null);
-  // const categoriesRef = useRef([]);
+export default function NewDonationPage({ user, setUser, menuItems, cart, setCart }) {
   const navigate = useNavigate();
 
-  useEffect(function() {
-    async function getItems() {
-      const items = await itemsAPI.getAll();
-      // categoriesRef.current = [...new Set(items.map(item => item.category.name))];
-      setMenuItems(items);
-      // setActiveCat(categoriesRef.current[0]);
-    }
-    getItems();
-    async function getCart() {
-      const cart = await donationsAPI.getCart();
-      setCart(cart);
-    }
-    getCart();
-  }, []);
- 
+
 
   /*--- Event Handlers ---*/
 
@@ -51,11 +32,7 @@ export default function NewDonationPage({ user, setUser }) {
   return (
     <main className="NewDonationPage">
       <aside>
-        {/* <CategoryList
-          categories={categoriesRef.current}
-          activeCat={activeCat}
-          setActiveCat={setActiveCat}
-        /> */}
+       
         <Link to="/donations" className="button btn-sm">PREVIOUS DONATIONS</Link>
         <UserLogOut user={user} setUser={setUser} />
       </aside>

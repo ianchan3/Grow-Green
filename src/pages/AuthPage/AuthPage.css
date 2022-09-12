@@ -4,7 +4,7 @@ body {
   background-color: rgb(190, 233, 248);
   background-image: url('https://teamtrees.org/img/big-header.png');
   background-size: contain;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
 }
 
