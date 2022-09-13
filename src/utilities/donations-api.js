@@ -6,7 +6,7 @@ export function deleteDonation(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
 
-export function updateDonation(id) {
+export function update(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'PUT');
 }
 

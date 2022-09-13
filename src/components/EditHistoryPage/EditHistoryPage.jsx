@@ -1,14 +1,26 @@
 import MenuList from "../MenuList/MenuList";
-import DonationDetail from "../DonationDetail/DonationDetail";
+import EditDetail from "../EditDetail/EditDetail";
 import * as donationsAPI from '../../utilities/donations-api';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
-
-export default function EditHistoryPage ({ menuItems, cart, setCart, donations }) {
+export default function EditHistoryPage ({ menuItems, donations }) {
+  const [updateCart, setUpdateCart] = useState(null)
   const navigate = useNavigate();
-
+  const {id} = useParams();
  
-    
+  useEffect(() => {
+    function filterDonation () {
+      let cart = donations.filter(function(d){
+        if (d._id === id) return d
+      });
+      setUpdateCart(cart)
+    }
+    filterDonation();  
+  }, [id]);  
+
+    if (updateCart === null) return null;
+
     async function handleAddToDonation(itemId) {
       const updatedCart = await donationsAPI.addItemToCart(itemId);
       setCart(updatedCart);
@@ -19,8 +31,8 @@ export default function EditHistoryPage ({ menuItems, cart, setCart, donations }
       setCart(updatedCart);
     }
   
-    async function handleCheckout() {
-      await donationsAPI.checkout();
+    async function handleUpdate() {
+      await donationsAPI.update();
       navigate('/donations');
     }
       
@@ -31,10 +43,10 @@ export default function EditHistoryPage ({ menuItems, cart, setCart, donations }
         menuItems={menuItems}
         handleAddToDonation={handleAddToDonation}
       />
-      <DonationDetail 
+      <EditDetail 
       donation={cart}
       handleChangeQty={handleChangeQty}
-      handleCheckout={handleCheckout}
+      handleUpdate={handleUpdate}
       />
       
       <button>Update Donation</button>

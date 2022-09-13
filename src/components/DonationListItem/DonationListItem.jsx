@@ -10,10 +10,6 @@ export default function DonationListItem({ donation, isSelected, setSelectedDona
     routeChange("/donations")
   }
   
-  async function handleUpdate(id){
-    await donationsAPI.updateDonation(id)
-  }
-  
 
   return (
     <div
