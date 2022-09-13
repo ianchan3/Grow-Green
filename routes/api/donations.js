@@ -14,6 +14,6 @@ router.post('/cart/checkout', donationsCtrl.checkout);
 router.put('/cart/qty', donationsCtrl.setItemQtyInCart);
 router.delete('/:id', donationsCtrl.deleteDonation);
 router.put('/edit/:id', donationsCtrl.updateDonation);
-router.post('/reviews/:id', donationsCtrl.addReview);
+// router.post('/reviews/:id', donationsCtrl.addReview);
 
 module.exports = router;

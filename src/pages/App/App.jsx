@@ -47,7 +47,7 @@ export default function App({}) {
             {/* Route components in here */}
             <Route path='/donations/new' element={<NewDonationPage user={user} setUser={setUser} menuItems={menuItems} cart={cart} setCart={setCart}/>} />
             <Route path='/donations' element={<DonationHistoryPage user={user} setUser={setUser} routeChange={routeChange} donations={donations} setDonations={setDonations} />} />
-            <Route path='/donations/reviews/:id' element={<EditHistoryPage donations={donations} setDonations={setDonations} menuItems={menuItems} cart={cart} setCart={setCart} />} />
+            <Route path='/donations/edit/:id' element={<EditHistoryPage donations={donations} setDonations={setDonations} menuItems={menuItems} cart={cart} setCart={setCart} />} />
           </Routes>
         </>
         :
