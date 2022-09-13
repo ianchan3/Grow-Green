@@ -24,7 +24,7 @@ export default function DonationListItem({ donation, isSelected, setSelectedDona
         <div>${donation.donationTotal.toFixed(2)}</div>
         <div className="smaller">{donation.totalQty} Item{donation.totalQty > 1 && 's'}</div>
         <button onClick={() => handleDelete(donation._id)}>Delete</button>   
-        <Link to ={`/donations/edit/${donation._id}`}>Edit</Link>
+        <Link to ={`/donations/reviews/${donation._id}`}>Edit</Link>
         </div>
     </div>
   );

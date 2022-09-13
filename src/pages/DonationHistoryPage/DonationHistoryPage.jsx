@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './DonationHistoryPage.css';
 import * as donationsAPI from '../../utilities/donations-api';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
@@ -8,6 +8,7 @@ import DonationList from '../../components/DonationList/DonationList';
 
 export default function DonationHistoryPage({ user, setUser, donations, setDonations }) {
   const [selectedDonation, setSelectedDonation] = useState(null);
+
 
   useEffect(function() {
     async function getDonations() {
@@ -19,6 +20,7 @@ export default function DonationHistoryPage({ user, setUser, donations, setDonat
   }, []);
 
   return (
+    <>
     <main className="DonationHistoryPage">
       <aside>
       <Link to="/donations/new" className="button btn-sm">NEW DONATION</Link>
@@ -30,6 +32,8 @@ export default function DonationHistoryPage({ user, setUser, donations, setDonat
         setSelectedDonation={setSelectedDonation}
       />
       <DonationDetail donation={selectedDonation} />
+
     </main>
+    </>
   );
 }

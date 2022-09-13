@@ -9,7 +9,8 @@ module.exports = {
   checkout,
   forUser,
   deleteDonation,
-  updateDonation
+  updateDonation,
+  addReview
 };
 
 async function deleteDonation(req, res) {
@@ -48,7 +49,13 @@ async function cart(req, res) {
   res.json(cart);
 }
 
-
+async function addReview(req, res) {
+  let donation = await Donation.findById(req.params.id) 
+  req.body.user = req.user._id;
+  donation.reviews.push(req.body);
+  await donation.save()
+  res.json(donation);
+}
 
 
 

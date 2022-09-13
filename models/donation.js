@@ -3,6 +3,17 @@ const Schema = mongoose.Schema;
 
 const itemSchema = require('./itemSchema');
 
+const reviewSchema = new Schema({
+  content: {
+    type: String,
+    match: /.{1,}/
+  },
+  user: {type: Schema.Types.ObjectId, ref: 'User'},
+  userName: String,
+}, {
+  timestamps: true
+});
+
 const lineItemSchema = new Schema({
   qty: { type: Number, default: 1 },
   item: itemSchema
@@ -17,6 +28,7 @@ lineItemSchema.virtual('extPrice').get(function() {
 
 const donationSchema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: 'User' },
+  reviews: [reviewSchema],
   lineItems: [lineItemSchema],
   isPaid: {type: Boolean, default: false }
 }, {

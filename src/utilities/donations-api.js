@@ -2,6 +2,10 @@ import sendRequest from './send-request';
 
 const BASE_URL = '/api/donations';
 
+export function addReview(reviewData, id) {
+  return sendRequest(`${BASE_URL}/reviews/${id}`, 'POST', reviewData);
+}
+
 export function deleteDonation(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
