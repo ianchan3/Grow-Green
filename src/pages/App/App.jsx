@@ -24,7 +24,6 @@ export default function App() {
   const [cart, setCart] = useState(null);
   const [selectedDonation, setSelectedDonation] = useState(null);
 
-
   useEffect(function() {
     async function getDonations() {
       const donations = await donationsAPI.getAllForUser();
@@ -65,7 +64,6 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            {/* Route components in here */}
             <Route path='/donations/new' element={<NewDonationPage user={user} setUser={setUser} menuItems={menuItems} cart={cart} setCart={setCart}/>} />
             <Route path='/donations' element={<DonationHistoryPage user={user} setUser={setUser} routeChange={routeChange} donations={donations} setDonations={setDonations} selectedDonation={selectedDonation} setSelectedDonation={setSelectedDonation} />} />
             <Route path='/donations/info/:id' element={<DonationInfo donations={donations} addComment={addComment}/>} />

@@ -1,6 +1,4 @@
 const Donation = require('../../models/donation');
-// const Item = require('../../models/item');
-
 
 module.exports = {
   cart,
@@ -11,9 +9,7 @@ module.exports = {
   deleteDonation,
   // updateDonation,
   addComment,
-  updateComment
-  
-  
+  updateComment  
 };
 
 async function updateComment(req, res) {
@@ -21,15 +17,12 @@ async function updateComment(req, res) {
   console.log(req.body, req.params.did, req.params.cid)
    const donation = await Donation.findOne({_id: req.params.did})
    const comment = donation.comments.id(req.params.cid);
+   req.body.user = req.user._id;
     comment.content = req.body.content;
     await donation.save();
-  
     const donations = await Donation.find({user: req.user._id, isPaid: true}).sort('-updatedAt');
     res.json(donations);
-    
-    }
-
-
+  }
 
 async function addComment(req, res) {
   let donation = await Donation.findById(req.params.id) 
@@ -42,7 +35,8 @@ async function addComment(req, res) {
 
 async function deleteDonation(req, res) {
   await Donation.findByIdAndDelete(req.params.id);
- 
+  req.body.user = req.user._id;
+
 }
 
 // async function updateDonation(req, res) {

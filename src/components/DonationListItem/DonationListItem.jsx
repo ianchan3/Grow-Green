@@ -2,14 +2,12 @@ import './DonationListItem.css';
 import { Link } from 'react-router-dom';
 import * as donationsAPI from '../../utilities/donations-api';
 
-
 export default function DonationListItem({ donation, isSelected, setSelectedDonation, routeChange, user }) {
 
   async function handleDelete(id){
     await donationsAPI.deleteDonation(id)
     routeChange("/donations")
   }
-  
 
   return (
     <div

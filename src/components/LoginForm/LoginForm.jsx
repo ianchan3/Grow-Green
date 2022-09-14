@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
 
@@ -17,7 +16,6 @@ export default function LoginForm({ setUser }) {
   async function handleSubmit(evt) {
     evt.preventDefault();
     try {
-  
       const user = await usersService.login(credentials);
       setUser(user);
     } catch {

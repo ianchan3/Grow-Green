@@ -10,10 +10,6 @@ import UserLogOut from '../../components/UserLogOut/UserLogOut';
 export default function NewDonationPage({ user, setUser, menuItems, cart, setCart }) {
   const navigate = useNavigate();
 
-
-
-  /*--- Event Handlers ---*/
-
   async function handleAddToDonation(itemId) {
     const updatedCart = await donationsAPI.addItemToCart(itemId);
     setCart(updatedCart);
@@ -32,7 +28,6 @@ export default function NewDonationPage({ user, setUser, menuItems, cart, setCar
   return (
     <main className="NewDonationPage">
       <aside>
-       
         <Link to="/donations" className="button btn-sm">PREVIOUS DONATIONS</Link>
         <UserLogOut user={user} setUser={setUser} />
       </aside>
