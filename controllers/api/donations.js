@@ -9,19 +9,45 @@ module.exports = {
   checkout,
   forUser,
   deleteDonation,
-  updateDonation,
-  addReview
+  // updateDonation,
+  addComment,
+  updateComment
+  
+  
 };
+
+async function updateComment(req, res) {
+  
+  console.log(req.body, req.params.did, req.params.cid)
+   const donation = await Donation.findOne({_id: req.params.did})
+   const comment = donation.comments.id(req.params.cid);
+    comment.content = req.body.content;
+    await donation.save();
+  
+    const donations = await Donation.find({user: req.user._id, isPaid: true}).sort('-updatedAt');
+    res.json(donations);
+    
+    }
+
+
+
+async function addComment(req, res) {
+  let donation = await Donation.findById(req.params.id) 
+  req.body.user = req.user._id;
+  donation.comments.push(req.body);
+  await donation.save()
+  const donations = await Donation.find({user: req.user._id, isPaid: true}).sort('-updatedAt');
+  res.json(donations);
+}
 
 async function deleteDonation(req, res) {
   await Donation.findByIdAndDelete(req.params.id);
-  // const donations = await Donation.find({}).sort('-createdAt').exec();
-  // res.json(donations);
+ 
 }
 
-async function updateDonation(req, res) {
-  await Donation.findByIdAndUpdate(req.params.id);
-}
+// async function updateDonation(req, res) {
+//   await Donation.findByIdAndUpdate(req.params.id);
+// }
 
 async function forUser(req, res) {
   const donations = await Donation.find({user: req.user._id, isPaid: true}).sort('-updatedAt');
@@ -49,13 +75,7 @@ async function cart(req, res) {
   res.json(cart);
 }
 
-async function addReview(req, res) {
-  let donation = await Donation.findById(req.params.id) 
-  req.body.user = req.user._id;
-  donation.reviews.push(req.body);
-  await donation.save()
-  res.json(donation);
-}
+
 
 
 

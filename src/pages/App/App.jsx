@@ -7,10 +7,11 @@ import AuthPage from '../AuthPage/AuthPage';
 import NewDonationPage from '../NewDonationPage/NewDonationPage';
 import DonationHistoryPage from '../DonationHistoryPage/DonationHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
-import EditHistoryPage from '../../components/EditHistoryPage/EditHistoryPage';
+import UpdateCommentForm from '../../components/UpdateCommentForm/UpdateCommentForm';
+import DonationInfo from '../DonationInfo/DonationInfo';
 import './App.css';
 
-export default function App({}) {
+export default function App() {
   const navigate = useNavigate();
 
   const routeChange = (path) => {
@@ -21,7 +22,17 @@ export default function App({}) {
   const [donations, setDonations] = useState([]);
   const [menuItems, setMenuItems] = useState([]);
   const [cart, setCart] = useState(null);
+  const [selectedDonation, setSelectedDonation] = useState(null);
 
+
+  useEffect(function() {
+    async function getDonations() {
+      const donations = await donationsAPI.getAllForUser();
+      setDonations(donations);
+      setSelectedDonation(donations[0]);
+    }
+    getDonations();
+  }, []);
 
 
   useEffect(function() {
@@ -38,6 +49,16 @@ export default function App({}) {
     getCart();
   }, []);
 
+  async function updateComment(comment, did, cid){
+    let donations = await donationsAPI.updateComment(comment, did, cid) 
+    setDonations(donations)
+  }
+  
+  async function addComment(comment, did){
+    let donations = await donationsAPI.addComment(comment, did) 
+    setDonations(donations)
+  }
+
   return (
     <main className="App">
       { user ?
@@ -46,8 +67,9 @@ export default function App({}) {
           <Routes>
             {/* Route components in here */}
             <Route path='/donations/new' element={<NewDonationPage user={user} setUser={setUser} menuItems={menuItems} cart={cart} setCart={setCart}/>} />
-            <Route path='/donations' element={<DonationHistoryPage user={user} setUser={setUser} routeChange={routeChange} donations={donations} setDonations={setDonations} />} />
-            <Route path='/donations/edit/:id' element={<EditHistoryPage donations={donations} setDonations={setDonations} menuItems={menuItems} cart={cart} setCart={setCart} />} />
+            <Route path='/donations' element={<DonationHistoryPage user={user} setUser={setUser} routeChange={routeChange} donations={donations} setDonations={setDonations} selectedDonation={selectedDonation} setSelectedDonation={setSelectedDonation} />} />
+            <Route path='/donations/info/:id' element={<DonationInfo donations={donations} addComment={addComment}/>} />
+            <Route path='/donations/:did/info/:cid/update' element={<UpdateCommentForm donations={donations} updateComment={updateComment}  />} />
           </Routes>
         </>
         :

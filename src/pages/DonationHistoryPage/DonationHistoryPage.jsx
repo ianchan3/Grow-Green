@@ -6,18 +6,18 @@ import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import DonationDetail from '../../components/DonationDetail/DonationDetail';
 import DonationList from '../../components/DonationList/DonationList';
 
-export default function DonationHistoryPage({ user, setUser, donations, setDonations }) {
-  const [selectedDonation, setSelectedDonation] = useState(null);
+export default function DonationHistoryPage({ user, setUser, donations, setDonations, selectedDonation, setSelectedDonation }) {
+  // const [selectedDonation, setSelectedDonation] = useState(null);
 
 
-  useEffect(function() {
-    async function getDonations() {
-      const donations = await donationsAPI.getAllForUser();
-      setDonations(donations);
-      setSelectedDonation(donations[0]);
-    }
-    getDonations();
-  }, []);
+  // useEffect(function() {
+  //   async function getDonations() {
+  //     const donations = await donationsAPI.getAllForUser();
+  //     setDonations(donations);
+  //     setSelectedDonation(donations[0]);
+  //   }
+  //   getDonations();
+  // }, []);
 
   return (
     <>
@@ -27,11 +27,11 @@ export default function DonationHistoryPage({ user, setUser, donations, setDonat
         <UserLogOut user={user} setUser={setUser} />
       </aside>
       <DonationList
+        user={user}
         donations={donations}
         selectedDonation={selectedDonation}
         setSelectedDonation={setSelectedDonation}
       />
-      <DonationDetail donation={selectedDonation} />
 
     </main>
     </>

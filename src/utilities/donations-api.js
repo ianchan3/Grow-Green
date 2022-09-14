@@ -2,16 +2,16 @@ import sendRequest from './send-request';
 
 const BASE_URL = '/api/donations';
 
-export function addReview(reviewData, id) {
-  return sendRequest(`${BASE_URL}/reviews/${id}`, 'POST', reviewData);
+export function addComment(commentData, id) {
+  return sendRequest(`${BASE_URL}/comments/${id}`, 'POST', commentData);
 }
 
 export function deleteDonation(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
 
-export function update(id) {
-  return sendRequest(`${BASE_URL}/${id}`, 'PUT');
+export function updateComment(comment, did, cid) {
+  return sendRequest(`${BASE_URL}/donations/${did}/comments/${cid}`, 'PUT', comment);
 }
 
 export function getCart() {

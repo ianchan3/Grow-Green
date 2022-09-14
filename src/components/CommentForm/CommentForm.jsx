@@ -1,26 +1,23 @@
 import { useState } from 'react';
-import * as donationsAPI from '../../utilities/donations-api';
 
 
-export default function CommentForm ({ setDonations, id }) {
-  const [review, setReview] = useState({content: ''});
+export default function CommentForm ({ donationId, addComment }) {
+  const [comment, setComment] = useState({content: ''});
   
   async function handleSubmit(evt) {
     evt.preventDefault()
-    let addedReview = await donationsAPI.addReview(review, id) 
-    console.log(addedReview, 'review')
-    setDonations(addedReview)
+    addComment(comment, donationId) 
   }
 
   function handleChange(evt) {
-    const newReview = {...review, [evt.target.name]: evt.target.value };
-    setReview(newReview);
+    const newComment= {...comment, [evt.target.name]: evt.target.value };
+    setComment(newComment);
   }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input name="content" onChange={handleChange} value={review.content} type="text" placeholder="comment" />
+        <input name="content" onChange={handleChange} value={comment.content} type="text" placeholder="comment" />
         <button type="submit">Submit</button>
       </form>
     </>

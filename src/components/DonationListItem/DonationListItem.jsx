@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import * as donationsAPI from '../../utilities/donations-api';
 
 
-export default function DonationListItem({ donation, isSelected, setSelectedDonation, routeChange }) {
+export default function DonationListItem({ donation, isSelected, setSelectedDonation, routeChange, user }) {
 
   async function handleDelete(id){
     await donationsAPI.deleteDonation(id)
@@ -23,8 +23,11 @@ export default function DonationListItem({ donation, isSelected, setSelectedDona
       <div className="align-rt">
         <div>${donation.donationTotal.toFixed(2)}</div>
         <div className="smaller">{donation.totalQty} Item{donation.totalQty > 1 && 's'}</div>
-        <button onClick={() => handleDelete(donation._id)}>Delete</button>   
-        <Link to ={`/donations/edit/${donation._id}`}>Edit</Link>
+        {donation.user === user._id && <button onClick={() => handleDelete(donation._id)}>Delete</button>}
+  
+        <br></br>
+        <Link to ={`/donations/info/${donation._id}`}>Info</Link>
+
         </div>
     </div>
   );

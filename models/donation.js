@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const itemSchema = require('./itemSchema');
 
-const reviewSchema = new Schema({
+const commentSchema = new Schema({
   content: {
     type: String,
     match: /.{1,}/
@@ -28,7 +28,7 @@ lineItemSchema.virtual('extPrice').get(function() {
 
 const donationSchema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: 'User' },
-  reviews: [reviewSchema],
+  comments: [commentSchema],
   lineItems: [lineItemSchema],
   isPaid: {type: Boolean, default: false }
 }, {
