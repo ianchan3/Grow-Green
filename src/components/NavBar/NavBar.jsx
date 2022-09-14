@@ -15,13 +15,13 @@ export default function NavBar({ user, setUser }) {
       
       <nav>
         <Link to='/'><Logo /></Link>
-        <Link to='/donations'>Donation History</Link>
-        &nbsp; | &nbsp;
-        <Link to='/donations/new'>New Donation</Link>
-        &nbsp; | &nbsp;
-        Welcome, {user.name}
-        &nbsp; | &nbsp;
-        <Link to='' onClick={handleLogOut}>Log Out</Link>
+        Welcome {user.name}!
+        
+        <Link id="navbar" to='/donations'>Donation History</Link>
+        
+        <Link id="navbar" to='/donations/new'>New Donation</Link>
+        
+        <Link id='navbar' to='' onClick={handleLogOut}>Log Out</Link>
       </nav>
     </main>
   );

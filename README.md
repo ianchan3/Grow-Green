@@ -3,7 +3,9 @@
 Grow Green is a donation website dedicated to help the environment by planting and growing trees. People can sign up and donate to plant trees in specific areas or in general.
 
 ## :framed_picture: **Screenshots of App**
-
+<img src = https://i.imgur.com/G49LLZI.jpg>
+<img src = https://i.imgur.com/Dn2SAOy.jpg>
+<img src = https://i.imgur.com/h5GaeDY.jpg>
 
 ## :computer: **Technologies Used**
 ![MongoDB](https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb)
@@ -26,7 +28,7 @@ Grow Green is a donation website dedicated to help the environment by planting a
 
 [Trello Planning Board] (https://trello.com/b/7kn991cX/project-4)
 
-## :fast_forward: **Next Steps (Icebox Features) **
+## :fast_forward: **Next Steps (Icebox Features)**
 
 - Implement API to create a interactive map of the world to see current trees remaining, how many have been cut, and how many have been planted
 - Allow users to see the total number of all trees planted by the organization

@@ -10,8 +10,8 @@ export default function AuthPage({ setUser }) {
   return (
     <main>
       <Logo />
-      <h1>{showLogin ? 'Log In Page' : 'Sign Up Page'}</h1>
-      <button onClick={() => setShowLogin(!showLogin)}>
+      <h1>{showLogin ? 'Customer Log In ' : 'Create Account'}</h1>
+      <button id="Toggle-Auth" onClick={() => setShowLogin(!showLogin)}>
         {showLogin ? 'Sign Up ' : 'Log In'}
       </button>
       { showLogin ?

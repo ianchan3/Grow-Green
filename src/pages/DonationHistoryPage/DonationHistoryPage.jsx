@@ -10,10 +10,7 @@ export default function DonationHistoryPage({ user, setUser, donations, setDonat
   return (
     <>
       <main className="DonationHistoryPage">
-        <aside>
-        <Link to="/donations/new" className="button btn-sm">NEW DONATION</Link>
-          <UserLogOut user={user} setUser={setUser} />
-        </aside>
+        
         <DonationList
           user={user}
           donations={donations}

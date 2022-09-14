@@ -1,0 +1,24 @@
+.form-container {
+  background-color: lightgreen;
+}
+
+#SignUp-Button {
+  background-color: green;
+  color: white;
+}
+
+#SignUp-Button:hover {
+  background-color: blue;
+}
+
+label {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+}

@@ -11,13 +11,23 @@
   border-radius: 1vmin;
   font-size: 2vmin;
   cursor: pointer;
+  
 }
 
 .DonationListItem.selected, .DonationListItem:not(.selected):hover {
-  border-color: var(--orange);
-  border-width: 0.2vmin;
+  border-color: green;
+  border-width: 1vmin;
+  background-color: white;
+  color: black;
 }
 
 .DonationListItem.selected {
   cursor: default;
+}
+
+div, span {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
 }

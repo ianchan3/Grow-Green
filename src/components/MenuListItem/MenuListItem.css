@@ -6,9 +6,9 @@
   margin-bottom: 3vmin;
   padding: 2vmin;
   color: var(--text-light);
-  background-color: var(--white);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
+  background-color: white;
+  border: 1vmin solid var(--tan-3);
+  border-radius: 10vmin;
   font-size: 4vmin;
 }
 
@@ -17,8 +17,8 @@
   width: 8vw;
   font-size: 4vw;
   background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
+  border: 0.5vmin solid var(--tan-3);
+  border-radius: 6vmin;
 }
 
 .MenuListItem .buy {
@@ -29,12 +29,12 @@
 .MenuListItem .buy span {
   font-size: 1.7vw;
   text-align: center;
-  color: var(--text-light);
+  color: black;
 }
 
 .MenuListItem .name {
   font-size: 2vw;
   text-align: center;
-  color: var(--text-light);
+  color: black;
 }
 

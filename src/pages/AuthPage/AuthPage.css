@@ -6,6 +6,18 @@ body {
   background-repeat: no-repeat;
 }
 
+#Toggle-Auth {
+  background-color: green;
+  color: white;
+}
+
+#Toggle-Auth:hover {
+  background-color: blue;
+}
+
+main > h1 {
+  color: black;
+}
 
 /* body {
   background-image: url('https://8billiontrees.com/wp-content/uploads/2021/07/graphic-people-working-tree-planting-organizations.png'); 
