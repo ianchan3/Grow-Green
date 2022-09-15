@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './CommentForm.css';
 
 
 export default function CommentForm ({ donationId, addComment }) {
@@ -16,10 +17,12 @@ export default function CommentForm ({ donationId, addComment }) {
 
   return (
     <>
+    <div>
       <form onSubmit={handleSubmit}>
         <input name="content" onChange={handleChange} value={comment.content} type="text" placeholder="comment" />
         <button type="submit">Submit</button>
       </form>
+    </div>
     </>
   )
 }
