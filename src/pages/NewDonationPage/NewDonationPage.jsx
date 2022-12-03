@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import * as itemsAPI from '../../utilities/items-api';
 import * as donationsAPI from '../../utilities/donations-api';
 import './NewDonationPage.css';
 import DonationDetail from '../../components/DonationDetail/DonationDetail';
