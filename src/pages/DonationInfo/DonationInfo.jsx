@@ -1,8 +1,6 @@
 import DonationDetail from "../../components/DonationDetail/DonationDetail";
 import CommentForm from "../../components/CommentForm/CommentForm";
-import * as donationsAPI from "../../utilities/donations-api";
 import {  useParams, Link } from 'react-router-dom';
-import {  useEffect } from 'react';
 
 export default function DonationInfo ({ donations, addComment }) {
   const { id } = useParams();
