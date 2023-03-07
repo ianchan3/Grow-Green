@@ -3,9 +3,9 @@
 Grow Green is a donation website dedicated to help the environment by planting and growing trees. People can sign up and donate to plant trees in specific locations or in general.
 
 ## :framed_picture: **Screenshots of App**
-<img src = https://i.imgur.com/G49LLZI.jpg>
-<img src = https://i.imgur.com/Dn2SAOy.jpg>
-<img src = https://i.imgur.com/h5GaeDY.jpg>
+<img src = https://i.imgur.com/yA0TrA0.png>
+<img src = https://i.imgur.com/4Ehwmlj.png>
+<img src = https://i.imgur.com/E0pYWc0.png>
 
 ## :computer: **Technologies Used**
 
