@@ -8,19 +8,8 @@ Grow Green is a donation website dedicated to help the environment by planting a
 <img src = https://i.imgur.com/h5GaeDY.jpg>
 
 ## :computer: **Technologies Used**
-![MongoDB](https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb)
-![Express](https://img.shields.io/badge/-Express-05122A?style=flat&logo=express)
-![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=react)
-![Node](https://img.shields.io/badge/-Node.js-05122A?style=flat&logo=node.js)
-![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)
-![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5)
-![CSS3](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3)
-![Trello](https://img.shields.io/badge/-Trello-05122A?style=flat&logo=trello)
-![Heroku](https://img.shields.io/badge/-Heroku-05122A?style=flat&logo=heroku)
-![Markdown](https://img.shields.io/badge/-Markdown-05122A?style=flat&logo=markdown)
-![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)
-![Github](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)
-![VSCode](https://img.shields.io/badge/-VS_Code-05122A?style=flat&logo=visualstudio)
+
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,react,nodejs,express,mongodb,react,heroku,markdown,git,github,vscode)](https://skillicons.dev)
 
 ## :link: **Important Links**
 
