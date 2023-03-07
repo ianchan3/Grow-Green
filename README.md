@@ -9,7 +9,7 @@ Grow Green is a donation website dedicated to help the environment by planting a
 
 ## :computer: **Technologies Used**
 
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,react,nodejs,express,mongodb,react,heroku,markdown,git,github,vscode)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,react,nodejs,express,mongodb,react,heroku,markdown,git,github,vscode,markdown)](https://skillicons.dev)
 
 ## :link: **Important Links**
 
