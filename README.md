@@ -13,9 +13,9 @@ Grow Green is a donation website dedicated to help the environment by planting a
 
 ## :link: **Important Links**
 
-[Grow Green Website] (https://grow-green-p4.herokuapp.com/)
+- https://grow-green-p4.herokuapp.com
 
-[Trello Planning Board] (https://trello.com/b/7kn991cX/project-4)
+- https://trello.com/b/7kn991cX/project-4
 
 ## :fast_forward: **Next Steps (Icebox Features)**
 
